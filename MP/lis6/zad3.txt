@@ -1,0 +1,3 @@
+Niech P będzie własnością dla (NNF 'v), taką, że:
+(i) P(nnf-lit)
+(ii) Jeżeli zachodzi P(l) i P(r) to zachodzi P(nnf-conj l r) oraz P(nnf-disj l r)

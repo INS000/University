@@ -1,0 +1,26 @@
+      read  1    #n
+      read  2    #m
+      load  2
+      sub   1    #n < m; 1 - 2
+      jgtz  swap
+cont: load  2
+      jzero end
+      load  1
+      div   2
+      mult  2
+      sub   1
+      mult  =-1
+      store 1
+      load  2
+      sub   1
+      jgtz  swap
+      jump  cont
+swap: load  2
+      store 3
+      load  1
+      store 2
+      load  3
+      store 1
+      jump  cont
+end:  write 1
+      halt  

@@ -1,0 +1,21 @@
+      read  0
+      sub   =1
+      jzero tru
+      store 2
+      read  3
+loop: load  3
+      read  1
+      sub   1
+      add   =1
+      jgtz  fal
+      load  1
+      store 3
+      load  2
+      sub   =1
+      jzero tru
+      store 2
+      jump  loop
+tru:  write =1
+      halt  
+fal:  write =0
+      halt  

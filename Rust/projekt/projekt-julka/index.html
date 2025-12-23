@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juliet</title>
+</head>
+<body>
+    
+    <div style="margin-bottom: 5px;">C: real: <input type ='number' id="1" name='real' value='<%= re%>' />
+            &nbsp;
+            imaginary: <input type='number' id="2" name='im' value = '<%= im%>'/>
+            &nbsp;
+            zoom: <input type='number' id="3" name='zoom' value = '<%= zoom%>'/> </div>
+    <div style="margin-bottom: 2px;">   
+        <button id = "anim"> Animacja </button>
+        &nbsp;
+        <button id = "ren"> Render </button>
+        &nbsp;
+        <button id = "stop"> Stop </button>
+    </div>
+
+
+    <canvas id="Jula" width="1024" height="1024"></canvas>
+    <script type="module">
+        import { default as wasm, greet, juliet } from "./pkg/projekt_julka.js";
+        var re = 0.37;
+        var im = 0.1;
+        var zoom = 1;
+        var stop = 0;
+        wasm().then((module) => {
+          let can = document.getElementById("Jula").getContext("2d");
+          juliet(can, re, im, zoom);
+          const renderLoop = () => {
+            if(stop == 0){
+                juliet(can, re, im, zoom);
+                zoom += 0.1;
+                requestAnimationFrame(renderLoop);  
+            }
+        };
+
+        document.getElementById("ren").onclick = function () {
+            re = document.getElementById("1").value;
+            im = document.getElementById("2").value;
+            zoom = document.getElementById("3").value;
+            juliet(can, re, im, zoom);
+        }
+
+        document.getElementById("anim").onclick = function () {
+            stop = 0;
+            requestAnimationFrame(renderLoop);
+        }
+        document.getElementById("stop").onclick = function () {
+            stop = 1;
+        }
+        });
+    </script>
+    
+</body>
+</html>

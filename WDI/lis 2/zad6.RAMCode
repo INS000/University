@@ -1,0 +1,33 @@
+      read  0    #n
+      read  1    #a
+      sub   =1   #n-1
+      store 3    #n
+loop: jzero tru
+      read  2
+      load  1
+      sub   2    #1 2 
+      jzero fal
+      jgtz  cont
+      load  2
+      store 1
+      load  3
+      sub   =1
+      store 3
+      jump  loop
+cont: load  2
+      sub   1
+      jzero fal
+      jgtz  fal
+      load  3
+      sub   =1
+      store 3
+      jzero tru
+      load  2
+      store 1
+      read  2
+      jump  cont
+tru:  write =1
+      halt  
+fal:  write =0
+      halt  
+

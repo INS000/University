@@ -1,0 +1,36 @@
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
+using namespace std;
+
+double zad1av1(double x){
+    return 1.0 / (pow(x, 3) + sqrt(pow(x, 6) + 2023 * 2023));
+}
+
+double zad1av2(double x){
+    return (pow(x, 3) - sqrt(pow(x, 6) + 2023 * 2023)) / (-1.0 * 2023 * 2023);
+}
+
+double zad1bv1(double x){
+    return log2(x) - 2;
+}
+
+double zad1bv2(double x){
+    return log2(x / 4);
+}
+
+double zad1cv1(double x){
+    return M_PI / 2 - x - atan(1 / x);
+}
+
+double zad1cv2(double x){
+    return -1.0 / 3 + x * x / 5;
+}
+
+
+
+int main(){
+    cout << zad1av1(-1000000000) << ' ' << zad1av2(-1000000000) << '\n';
+    cout << zad1bv1(4 - pow(10.0, -15)) << ' ' << zad1bv2(4 - pow(10.0, -15)) << '\n';
+    cout << zad1cv1(pow(10.0, -8)) << ' ' << zad1cv2(pow(10.0, -100)) << '\n';
+}

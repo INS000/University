@@ -1,0 +1,9 @@
+zad3
+Worker.prototype = Person.prototype
+-Zmiany w Worker wplyna na person (slabo)
+
+Wroker.prototype = new Person()
+-przekazemy tylko argumenty person a nie doda tych z Worker
+
+Worker.prototype = Object.create(Person.prototype)
+-izolujemy prototyp i zmiana prototypu nie zmieni rodzica

@@ -1,0 +1,25 @@
+(map f (map g xs)) ≡ (map (lamda (x) (f (g x))))
+
+(define (my_map f xs)
+    (if (empty? xs) (list)
+        (cons (f (first xs)) (my_map f (rest xs)))))
+
+
+(i) P(empty)
+(ii) dla dowolnego elementx oraz listy xs, jeśli P (xs) to P ((cons x xs))
+
+Podstawa indukcji:
+(map f (map g empty)) ≡ (definicja map)
+(map f empty) ≡ (definicja map)
+empty
+
+(map (lamda (x) (f (g x))) (empty)) ≡ (def map)
+empty
+
+Krok indukcyjny:
+Załóżmy, że (map f (map g xs)) ≡ (map (lamda (x) (f (g x)))) i pokażemy, że (map f (map g (cons x xs))) ≡ (map (lamda (x) (f (g x))) (cons x xs))
+L ≡ (map f (map g (cons x xs))) ≡ (def map)                                                                                                                                   |
+(cons (f x) (map f (map g xs))) ≡ (z zał ind)                                                                                                                              __|
+(cons (f x) (map (lamda (x) (f (g x))) (xs))) ≡ (def map)    __                                                                                                           |
+(map (lamda (x) (f (g x))) (cons x xs)) ≡ P                 |_|     □                          🌩                                                                          \|/ 
+                                                 😁👍                       ⚡                                                                                               # V

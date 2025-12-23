@@ -1,0 +1,15 @@
+(append xs ys) ≡ zs.
+
+(i) P(empty)
+(ii) dla dowolnego elementx oraz listy xs, jeśli P (xs) to P ((cons x xs))
+
+Podstawa indukcji:
+(append empty ys) ≡ (def append)
+(ys) wiec oblicza sie do listy (zs) = (ys)
+
+Krok indukcyjny:
+Założmy, że (append xs ys) ≡ (zs) i pokażemy, że (append (cons x xs) ys) ≡ (z's)
+L ≡ (append (cons x xs) ys) ≡ (def append)
+(cons x (append xs ys)) ≡ (zasada ind)
+(cons x zs) ≡ (def cons)
+(lista z elementem x i sufixem zs)      😁👍  

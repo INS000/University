@@ -1,0 +1,32 @@
+Niech P bedzie własnością dla (NNF 'v'), taką że:
+(i)P(nnf-lit)
+(ii)Jeżeli zachodzi P(l) i P(r) to zachodzi P(nnf-conj l r) oraz P(nnf-disj l r)
+
+P(f) := (eval-nnf wart (neg-nnf f)) ≡ (not (eval-nnf wart f))
+
+Podstawa indukcji:
+P(nnf-lit) ≡ (eval-nnf wart (neg-nnf (nnf-lit))) ≡ (z def neg-nnf)
+(eval-nnf wart (nnf-lit (not (nnf-lit-polarity f)) (nnf-lit-var f))) ≡ (z def eval-nnf)
+(equal? (not (nnf-lit-polarity f)) (wart (nnf-lit-var f))) ≡ (wyjmijmy not poza equal bo zamienia wartosc boolowska)
+(not (equal? (not (nnf-lit-polarity f)) (wart (nnf-lit-var f)))) ≡ (z def eval)
+(not (eval-nnf wart (nnf-lit f)))
+
+Krok indukcyjny:
+Załóżmy, że zachodzi P(l) i P(r) ((eval-nnf wart (neg-nnf l)) ≡ (not (eval-nnf wart l))) oraz ((eval-nnf wart (neg-nnf r)) ≡ (not (eval-nnf wart r))) 
+Pokazemy ze zachodzi P(nnf-conj l r) oraz P(nnf-disj l r)
+
+Conj:
+(eval-nnf wart (neg-nnf (nnf-conj l r))) ≡ (not (eval-nnf wart (nnf-conj l r)))
+
+(eval-nnf wart (neg-nnf (nnf-conj l r))) ≡ (z def neg-nnf)
+(eval-nnf wart (nnf-disj (neg-nnf l) (neg-nnf r))) ≡ (z def eval-nnf)
+(or (eval-nnf wart (neg-nnf l)) (eval-nnf wart (neg-nnf r))) ≡ (z zał ind)
+(or (not (eval-nnf wart l)) (not (eval-nnf wart r))) ≡ (z de Morgana)
+(not (and (eval-nnf wart l) (eval-nnf wart r))) ≡ (z def eval-nnf)
+(not (eval-nnf wart (nnf-conj l r)))
+Zatem zachodzi P(nnf-conj l r)
+
+Disj:
+BZO
+
+😀👍

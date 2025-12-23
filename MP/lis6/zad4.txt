@@ -1,0 +1,46 @@
+( define-type ( NNF 'v)
+   ( nnf-lit [ polarity : Boolean ] [ var : 'v ])
+   ( nnf-conj [l : ( NNF 'v)] [r : ( NNF 'v) ])
+   ( nnf-disj [l : ( NNF 'v)] [r : ( NNF 'v) ]) )
+
+(define (neg-nnf f)
+  (cond ((nnf-lit? f) (nnf-lit (not (nnf-lit-polarity f)) (nnf-lit-var f)))
+        ((nnf-conj? f) (nnf-disj (neg-nnf (nnf-conj-l f)) (neg-nnf (nnf-conj-r f))))
+        ((nnf-disj? f) (nnf-conj (neg-nnf (nnf-disj-l f)) (neg-nnf (nnf-disj-r f))))))
+
+Niech P bedzie własnością dla (NNF 'v) taką, że:
+(i)P(nnf-lit)
+(ii)Jeżeli zachodzi P(l) i P(r) to zachodzi P(nnf-conj l r) oraz P(nnf-disj l r)
+
+P(fi) := (neg-nnf(neg-nnf fi)) ≡ fi
+
+Podstawa indukcji:
+P(nnf-lit) = (neg-nnf(neg-nnf(nnf-lit fi))) ≡ fi
+Z działania programu (neg-nnf (neg-nnf (nnf-lit fi))) ≡
+(neg-nnf (nnf-lit (not (nnf-lit-polarity f)) (nnf-lit-var f))) ≡
+(neg-nnf (nnf-lit (not(not (nnf-lit-polarity f))) (nnf-lit-var f))) ≡ 
+(neg-nnf (nnf-lit (nnf-lit-polarity f) (nnf-lit-var f)))
+
+Krok indukcyjny:
+Załóżmy że zachodzi P(l) i P(r) czyli (neg-nnf (neg-nnf l)) ≡ l i (neg-nnf (neg-nnf r)) ≡ r
+Pokażmy że zachodzi P(nnf-conj l r) oraz P(nnf-disj l r)
+
+Dla conj
+cel: (neg-nnf (neg-nnf (nnf-conj l r))) ≡ (nnf-conj l r)
+
+(neg-nnf (neg-nnf (nnf-conj l r))) ≡ (z definicji neg-nnf) ≡
+(neg-nnf (nnf-disj (neg-nnf l) (neg-nnf r))) ≡ (ponownie z definicji neg-nnf) ≡
+(nnf-conj (neg-nnf (neg-nnf l)) (neg-nnf (neg-nnf r))) ≡ (z z.i) ≡
+(nnf-conj l r)
+Zatem zachodzi P(nnf-conj l r)
+
+Dla disj
+cel: (neg-nnf (neg-nnf (nnf-disj l r))) ≡ (nnf-disj l r)
+
+(neg-nnf (neg-nnf (nnf-disj l r))) ≡ (z definicji neg-nnf) ≡
+(neg-nnf (nnf-conj (neg-nnf l) (neg-nnf r))) ≡ (ponownie z definicji neg-nnf) ≡
+(nnf-disj (neg-nnf (neg-nnf l)) (neg-nnf (neg-nnf r))) ≡ (z z.i) ≡
+(nnf-disj l r)
+Zatem zachodzi P(nnf-disj l r)
+
+Czyli dla dowolnej formuły fi zachodzi P(fi)

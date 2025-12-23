@@ -1,0 +1,26 @@
+zad 3
+
+(( lambda ( x ) x ) ( lambda ( x ) x ) y) //y wpisany przez uzytkownika
+-> (( lambda ( ( lambda ( x ) x ) ) ( lambda ( x ) x ) ) y)
+-> (( lambda ( x ) x ) )
+-> y
+
+
+(( lambda ( x ) ( x x ) ) ( lambda ( x ) x ) )
+-> (( lambda ( ( lambda ( x ) x ) ) ( ( lambda ( x ) x ) ( lambda ( x ) x ) ) ) ) 
+-> (( lambda ( x ) ( ( lambda ( ( lambda ( x ) x ) ) ( lambda ( x ) x ) ) ) ) ) 
+-> (( lambda ( x ) ( ( lambda ( x ) x ) ) ) )
+-> (( lambda ( x ) x ) )
+-> x
+
+(( lambda ( x ) ( x x ) ) ( lambda ( x ) ( x x ) ) y)
+-> (( lambda ( ( lambda ( x ) ( x x ) ) ) ( ( lambda ( x ) ( x x ) ) ( lambda ( x ) ( x x ) ) ) ) y)
+-> (( lambda ( ( lambda ( x ) ( x x ) ) ) ( ( lambda ( ( lambda ( x ) ( x x ) ) ( ( lambda ( x ) ( x x ) ( lambda ( x ) ( x x ) ) ) ) ) ) y) //inf rekursja
+
+zad7
+; foldr-reverse uzywa appenda -> czyli doklejania nowej listy na koniec starej
+; kiedy dodajemy wiec nowy elemnt musimy przejsc wszystkie pozostale wczesniej
+; najpierw mamy 10000 - > 10000 9999 -> 10000 9999 9998 -> ...
+; nieuzytkami beda wiec wszystkie podlisty ktore nie daja jeszcze koncowego wyniku
+; otrzymamy ciag ayrtmetyczny wiec consow bedzie n * (n+1) / 2
+

@@ -1,0 +1,20 @@
+       read  0
+       add   =1
+       store 1
+       load  =2
+loop1: sub   1
+       sub   =1
+       jzero cont
+       add   1
+       add   =1
+       read  ^0
+       add   =1
+       jump  loop1
+cont:  load  1
+loop2: sub   =1
+       jzero end
+       add   =1
+       write ^0
+       sub   =1
+       jump  loop2
+end:   halt  

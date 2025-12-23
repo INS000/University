@@ -1,0 +1,76 @@
+lis 17, 2025 2:18:35 PM Zgadywanka main
+INFO: Uruchomiono program Zgadywanka
+lis 17, 2025 2:19:01 PM Zgadywanka main
+INFO: Gracz: Max
+lis 17, 2025 2:19:05 PM Zgadywanka main
+INFO: Rozpoczęto grę z zakresem Z=8. Maksymalna liczba prób=7
+lis 17, 2025 2:19:32 PM Zgadywanka main
+INFO: Max próbuje: 1/2
+lis 17, 2025 2:19:32 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:19:37 PM Zgadywanka main
+INFO: Max próbuje: 3/4
+lis 17, 2025 2:19:37 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:19:59 PM Zgadywanka main
+INFO: Max próbuje: 7/8
+lis 17, 2025 2:19:59 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:20:15 PM Zgadywanka main
+WARNING: Błąd walidacji: Ułamek musi być w (0,1).
+lis 17, 2025 2:20:22 PM Zgadywanka main
+INFO: Max próbuje: 1/8
+lis 17, 2025 2:20:22 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:20:43 PM Zgadywanka main
+WARNING: Błąd walidacji: Mianownik przekracza zakres Z=8
+lis 17, 2025 2:21:01 PM Zgadywanka main
+INFO: Max próbuje: 1/2
+lis 17, 2025 2:21:01 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:21:02 PM Zgadywanka main
+INFO: Max próbuje: 1/2
+lis 17, 2025 2:21:02 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:21:05 PM Zgadywanka main
+INFO: Max próbuje: 1/2
+lis 17, 2025 2:21:05 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:21:05 PM Zgadywanka main
+INFO: Koniec gry: gracz przegrał / poddał się.
+lis 17, 2025 2:21:05 PM Zgadywanka main
+INFO: Zakończono program Zgadywanka
+lis 17, 2025 2:23:41 PM Zgadywanka main
+INFO: Uruchomiono program Zgadywanka
+lis 17, 2025 2:23:45 PM Zgadywanka main
+INFO: Gracz: Aja
+lis 17, 2025 2:23:47 PM Zgadywanka main
+INFO: Rozpoczęto grę z zakresem Z=8. Maksymalna liczba prób=7
+lis 17, 2025 2:23:51 PM Zgadywanka main
+INFO: Aja próbuje: 1/2
+lis 17, 2025 2:23:51 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:23:57 PM Zgadywanka main
+INFO: Aja próbuje: 7/8
+lis 17, 2025 2:23:57 PM Zgadywanka main
+FINE: Odpowiedź: za dużo
+lis 17, 2025 2:24:05 PM Zgadywanka main
+INFO: Aja próbuje: 3/4
+lis 17, 2025 2:24:05 PM Zgadywanka main
+FINE: Odpowiedź: za dużo
+lis 17, 2025 2:24:07 PM Zgadywanka main
+INFO: Aja próbuje: 5/8
+lis 17, 2025 2:24:07 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:24:31 PM Zgadywanka main
+INFO: Aja próbuje: 4/7
+lis 17, 2025 2:24:31 PM Zgadywanka main
+FINE: Odpowiedź: za mało
+lis 17, 2025 2:24:35 PM Zgadywanka main
+INFO: Aja próbuje: 5/7
+lis 17, 2025 2:24:35 PM Zgadywanka main
+INFO: Aja wygrał.
+lis 17, 2025 2:24:35 PM Zgadywanka main
+INFO: Zakończono program Zgadywanka
+lis 17, 2025 2:28:02 PM Zgadywanka main
+INFO: Uruchomiono program Zgadywanka

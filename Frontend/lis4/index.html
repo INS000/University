@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <form class="form-card">
+        <h1>Formularz Kontaktowy</h1>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label class="form_label" for="name">Imię *</label>
+                <input class="form_text_input" type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form_label" for="surname">Nazwisko *</label>
+                <input class="form_text_input" type="text" id="surname" name="surname" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="form_label" for="email">E-mail *</label>
+            <input class="form_text_input" type="email" id="email" name="email" placeholder="np. anna@gmail.com" required pattern="^.+@.+\..+$">
+        </div>
+
+        <div class="form-group">
+            <label class="form_label" for="phone">Telefon</label>
+            <input class="form_text_input" type="tel" id="phone" name="phone" pattern="\d{9}" placeholder="np. 123456789">
+        </div>
+
+        <div class="checkbox-group">
+            <input class="form_checkbox" type="checkbox" id="newsletter" name="newsletter">
+            <label class="form_checkbox_label" for="newsletter">Zapisz mnie do newslettera</label>
+        </div>
+
+        <div class="form-group">
+            <label class="form_label" for="reason">Powód kontaktu *</label>
+            <select class="form_select" id="reason" name="reason" required>
+                <option value="">Wybierz...</option>
+                <option value="support">Wsparcie techniczne</option>
+                <option value="sales">Sprzedaż</option>
+                <option value="feedback">Opinia</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form_label" for="message">Wiadomość *</label>
+            <textarea id="message" name="message" placeholder="Podaj treść wiadomości"  required rows="4"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Wyślij</button>
+    </form>
+
+</body>
+</html>

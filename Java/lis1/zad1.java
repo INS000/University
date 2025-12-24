@@ -3,9 +3,9 @@ import java.util.*;
 public class zad1 {
     private static String[] rzymskie = {"M", "CM", "D", "CD", "C","XC", "L", "XL", "X", "IX", "V", "IV", "I"};
     private static int[] arabskie = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
-    private static String[] patroni = {"Małpa", "Kurczak", "Pies", "Świnia", "Szczur", "Bawół", "Tygrys", "Królik", "Smok", "Wąż", "Koń", "Koza"};
+    // private static String[] patroni = {"Małpa", "Kurczak", "Pies", "Świnia", "Szczur", "Bawół", "Tygrys", "Królik", "Smok", "Wąż", "Koń", "Koza"};
 
-    private static void printRoman(int number) {
+    private static String printRoman(int number) {
 
         if(number <= 0 || number >= 4000) {
             throw new IllegalArgumentException("rok" + number + " spoza zakresu");
@@ -18,7 +18,7 @@ public class zad1 {
                 number -= arabskie[i];
             }
         }
-        System.out.println("Twój rok urodzenia w systemie rzymskim to: " + result.toString());
+        return result.toString();
     }
 
 
@@ -29,50 +29,25 @@ public class zad1 {
         System.out.println("Cześć, " + name + "!");
         System.err.print("W ktorym roku sie urodziles? ");
         int birthYear = scanner.nextInt();
-        printRoman(birthYear);
+        System.out.println("Twój rok urodzenia w systemie rzymskim to: " + printRoman(birthYear));
         int patron = (birthYear % 12);
-        String patronName;
+        String patronName =
 
         switch (patron) {
-            case 0:
-                patronName = "Małpa";
-                break;
-            case 1:
-                patronName = "Kurczak";
-                break;
-            case 2:
-                patronName = "Pies";
-                break;
-            case 3:
-                patronName = "Świnia";
-                break;
-            case 4:
-                patronName = "Szczur";
-                break;
-            case 5:
-                patronName = "Bawół";
-                break;
-            case 6:
-                patronName = "Tygrys";
-                break;
-            case 7:
-                patronName = "Królik";
-                break;
-            case 8:
-                patronName = "Smok";
-                break;
-            case 9:
-                patronName = "Wąż";
-                break;
-            case 10:
-                patronName = "Koń";
-                break;
-            case 11:
-                patronName = "Koza";
-                break;
-            default:
-                patronName = "Hahaha";
-        }
+            case 0 -> "Małpa";
+            case 1 -> "Kurczak";
+            case 2 -> "Pies";
+            case 3 -> "Świnia";
+            case 4 -> "Szczur";
+            case 5 -> "Bawół";
+            case 6 -> "Tygrys";
+            case 7 -> "Królik";
+            case 8 -> "Smok";
+            case 9 -> "Wąż";
+            case 10 -> "Koń";
+            case 11 -> "Koza";
+            default -> "Hahaha";
+        };
         System.out.println("Twoim chińskim patronem jest " + patronName);
         scanner.close();
     }
